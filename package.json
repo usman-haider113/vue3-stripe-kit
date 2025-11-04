@@ -75,7 +75,7 @@
     "typescript",
     "vite"
   ],
-  "author": "vue3-stripe-kit contributors",
+  "author": "Usman Haider",
   "license": "MIT",
   "repository": {
     "type": "git",
