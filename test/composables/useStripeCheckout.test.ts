@@ -9,13 +9,15 @@ describe('useStripeCheckout', () => {
 
   it('should create checkout session successfully', async () => {
     const mockResponse = { id: 'cs_test_123', url: 'https://checkout.stripe.com/pay/cs_test_123' }
-    
+
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: vi.fn().mockResolvedValue(mockResponse)
     })
 
-    const { createCheckoutSession } = useStripeCheckout()
+    const { createCheckoutSession } = useStripeCheckout({
+      apiEndpoint: '/api/stripe/create-checkout-session'
+    })
     
     const config: CheckoutSessionConfig = {
       mode: 'payment',
@@ -54,7 +56,9 @@ describe('useStripeCheckout', () => {
       json: vi.fn().mockResolvedValue({ message: 'Invalid request' })
     })
 
-    const { createCheckoutSession, error } = useStripeCheckout()
+    const { createCheckoutSession, error } = useStripeCheckout({
+      apiEndpoint: '/api/stripe/create-checkout-session'
+    })
     
     const config: CheckoutSessionConfig = {
       mode: 'payment',
