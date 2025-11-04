@@ -1,0 +1,120 @@
+{
+  "name": "vue3-stripe-kit",
+  "version": "1.0.0",
+  "description": "A comprehensive, modular Stripe integration kit for Vue 3 with full TypeScript support",
+  "main": "dist/vue3-stripe-kit.umd.js",
+  "module": "dist/vue3-stripe-kit.es.js",
+  "types": "dist/vue3-stripe-kit.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/vue3-stripe-kit.d.ts",
+      "import": "./dist/vue3-stripe-kit.es.js",
+      "require": "./dist/vue3-stripe-kit.umd.js"
+    },
+    "./checkout": {
+      "types": "./dist/checkout.d.ts",
+      "import": "./dist/checkout.es.js"
+    },
+    "./elements": {
+      "types": "./dist/elements.d.ts",
+      "import": "./dist/elements.es.js"
+    },
+    "./subscriptions": {
+      "types": "./dist/subscriptions.d.ts",
+      "import": "./dist/subscriptions.es.js"
+    },
+    "./subscriptions-lite": {
+      "types": "./dist/subscriptions-lite.d.ts",
+      "import": "./dist/subscriptions-lite.es.js"
+    },
+    "./webhooks": {
+      "types": "./dist/webhooks.d.ts",
+      "import": "./dist/webhooks.es.js"
+    },
+    "./composables": {
+      "types": "./dist/composables.d.ts",
+      "import": "./dist/composables.es.js"
+    },
+    "./components": {
+      "types": "./dist/components.d.ts",
+      "import": "./dist/components.es.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:main && npm run build:modules && vue-tsc --emitDeclarationOnly",
+    "build:main": "vite build --config vite.config.main.ts",
+    "build:modules": "vite build",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch",
+    "docs:build": "api-extractor run --local && api-documenter markdown --input-folder temp --output-folder docs/api",
+    "docs:extract": "api-extractor run --local",
+    "prepublishOnly": "npm run lint:check && npm run typecheck && npm run test && npm run build && npm run docs:build",
+    "release": "npm run prepublishOnly && npm publish"
+  },
+  "keywords": [
+    "vue3",
+    "stripe",
+    "payment",
+    "checkout",
+    "elements",
+    "typescript",
+    "vite"
+  ],
+  "author": "vue3-stripe-kit contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usman-haider113/vue3-stripe-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/usman-haider113/vue3-stripe-kit/issues"
+  },
+  "homepage": "https://github.com/usman-haider113/vue3-stripe-kit#readme",
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@stripe/stripe-js": "^2.4.0"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.23.15",
+    "@microsoft/api-extractor": "^7.38.3",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "eslint": "^8.55.0",
+    "express": "^4.18.2",
+    "eslint-plugin-vue": "^9.19.2",
+    "jsdom": "^23.0.0",
+    "stripe": "^18.5.0",
+    "terser": "^5.44.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0",
+    "vitest": "^1.0.0",
+    "vue": "^3.3.8",
+    "vue-tsc": "^3.0.6"
+  }
+}

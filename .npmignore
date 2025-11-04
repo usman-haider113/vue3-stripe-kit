@@ -1,0 +1,58 @@
+# Source files (only ship dist/)
+src/
+test/
+*.test.ts
+*.spec.ts
+
+# Configuration files
+.vscode/
+.idea/
+tsconfig.json
+vite.config.ts
+vite.config.main.ts
+vitest.config.ts
+api-extractor.json
+.editorconfig
+.eslintrc*
+.prettierrc*
+
+# Development files
+.env
+.env.*
+*.log
+coverage/
+.nyc_output/
+
+# Build artifacts that shouldn't be published
+temp/
+tmp/
+tsdoc-metadata.json
+*.tsbuildinfo
+
+# Documentation source (keep built docs if any)
+docs/
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+azure-pipelines.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package manager files
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Other
+*.md.backup
+.npmrc
