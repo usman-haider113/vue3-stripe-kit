@@ -138,7 +138,8 @@ export function usePaymentIntents(
         throw new Error('clientSecret is required')
       }
 
-      let confirmParams: any = {}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const confirmParams: any = {}
 
       if (paymentMethod) {
         if (typeof paymentMethod === 'string') {

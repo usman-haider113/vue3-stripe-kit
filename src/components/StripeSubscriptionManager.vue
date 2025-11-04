@@ -205,7 +205,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useSubscriptions } from '@/composables/useSubscriptions'
 import type { SubscriptionStatus, SubscriptionConfig } from '@/types'
 
@@ -251,7 +251,7 @@ const {
   loading,
   error,
   retrieveSubscription,
-  updateSubscription,
+  // updateSubscription, // Not used in this component
   cancelSubscription,
   resumeSubscription: resumeSub,
   pauseSubscription: pauseSub,
@@ -429,18 +429,18 @@ const getPlanName = (subscription: SubscriptionStatus) => {
 }
 
 // Auto-refresh setup
-let refreshInterval: NodeJS.Timeout | null = null
+let refreshIntervalId: NodeJS.Timeout | null = null
 
 const setupAutoRefresh = () => {
   if (props.autoRefresh && props.refreshInterval > 0) {
-    refreshInterval = setInterval(loadSubscription, props.refreshInterval)
+    refreshIntervalId = setInterval(loadSubscription, props.refreshInterval)
   }
 }
 
 const clearAutoRefresh = () => {
-  if (refreshInterval) {
-    clearInterval(refreshInterval)
-    refreshInterval = null
+  if (refreshIntervalId) {
+    clearInterval(refreshIntervalId)
+    refreshIntervalId = null
   }
 }
 
