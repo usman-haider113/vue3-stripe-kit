@@ -1,10 +1,12 @@
 # Vue3 Stripe Kit
 
-[![npm version](https://badge.fury.io/js/vue3-stripe-kit.svg)](https://badge.fury.io/js/vue3-stripe-kit)
+[![npm version](https://img.shields.io/npm/v/vue3-stripe-kit.svg)](https://www.npmjs.com/package/vue3-stripe-kit)
+[![npm downloads](https://img.shields.io/npm/dm/vue3-stripe-kit.svg)](https://www.npmjs.com/package/vue3-stripe-kit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![Vue 3](https://img.shields.io/badge/Vue-3.x-brightgreen.svg)](https://vuejs.org/)
 
-The most comprehensive and flexible Stripe integration kit for Vue 3. Built with TypeScript and the Composition API, offering both composable hooks and ready-to-use components with full modular support.
+Complete Vue 3 Stripe integration with Payment Elements, Checkout, and Subscriptions. Features TypeScript support, Vue composables, ready-to-use components, and modular architecture for building payment forms, subscription management, and e-commerce solutions.
 
 ---
 
@@ -683,7 +685,5 @@ We welcome contributions! To contribute:
 | **Bundle Size** | ✅ 3-16KB (modular) | ⚠️ Larger |
 
 ---
-
-**Built with ❤️ for the Vue.js community**
 
 *The most comprehensive Stripe integration for Vue 3 developers* 🚀
